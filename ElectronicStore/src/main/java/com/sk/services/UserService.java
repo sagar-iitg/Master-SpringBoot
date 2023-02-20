@@ -11,10 +11,10 @@ public interface UserService {
 	//create
 	
 	
-	UserDto createUser(UserDto userDto);
 	
 	//update
 	
+	UserDto createUser(UserDto userDto);
 
 	UserDto updateUser(UserDto userDto,String userId);	
 	
