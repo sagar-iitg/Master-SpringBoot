@@ -10,10 +10,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-
-
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -37,7 +33,7 @@ public class User {
 	@Column(name="user_email",unique=true)
 	private String email;
 	
-	@Column(name="user_password",length=8)
+	@Column(name="user_password",length=10)
 	private String password;
 	private String gender;
 	

@@ -1,34 +1,29 @@
 package com.sk.services;
 
+import java.io.IOException;
 import java.util.List;
 
+import com.sk.dtos.PageableResponse;
 import com.sk.dtos.UserDto;
 
 public interface UserService {
 	
 	
 	
-	//create
-	
-	
-	
-	//update
+	//Create User
 	
 	UserDto createUser(UserDto userDto);
-
+	
+	//Update User 
 	UserDto updateUser(UserDto userDto,String userId);	
 	
-	//delete
-	
-	
+	//delete User
 	
 	void deleteUser(String userId);
 	
 	//get all  users
 	
-	
-	
-	List<UserDto> getAllUser();
+	PageableResponse<UserDto> getAllUser(int pageNumber,int pageSize,String sortBy,String sortDir);	
 	
 	
 	//get single user by id
@@ -40,8 +35,7 @@ public interface UserService {
 	
 	UserDto getUserByEmail(String email);
 	
-	//search user
-	
+	//search user by name
 	
 	List<UserDto> searchUser(String keyword);
 	
