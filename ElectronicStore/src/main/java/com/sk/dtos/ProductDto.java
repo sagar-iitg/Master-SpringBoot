@@ -2,6 +2,8 @@ package com.sk.dtos;
 
 import java.util.Date;
 
+import com.sk.entities.Category;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,10 +18,6 @@ import lombok.ToString;
 @ToString
 public class ProductDto {
 
-	
-	
-	
-
 	private String productId; 
 	private String title;		
 	private String description;
@@ -29,6 +27,9 @@ public class ProductDto {
 	private Date addedDate;	
 	private boolean live;
 	private boolean stock;
+	private String productImage;
+	private CategoryDto category;
+	
 	
 	
 	

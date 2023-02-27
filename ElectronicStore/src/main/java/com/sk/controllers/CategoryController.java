@@ -16,18 +16,24 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sk.dtos.ApiResponseMessage;
 import com.sk.dtos.CategoryDto;
 import com.sk.dtos.PageableResponse;
+import com.sk.dtos.ProductDto;
 import com.sk.services.CategoryService;
+import com.sk.services.ProductService;
 
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/categories")
 
-public class CategoryController {
+public class CategoryController 
+{
 
 	
 	@Autowired
 	private CategoryService categoryService;
+	
+	@Autowired
+	private ProductService productService;
 	
 	//create
 	@PostMapping
@@ -104,6 +110,50 @@ public class CategoryController {
 			
 	}
 	
+	//create product with category
+	@PostMapping("/{categoryId}/products")
+	public ResponseEntity<ProductDto> createProductWithCategory(@PathVariable String categoryId,
+			@RequestBody ProductDto dto)
+	{
+		
+		ProductDto productWithCategory=productService.createWithCategory(dto, categoryId);
+		return new ResponseEntity<ProductDto>(productWithCategory,HttpStatus.CREATED);
+		
+		
+	}
+	
+	
+	//update category of product
+	
+	@PutMapping("/{categoryId}/products/{productId}")
+	public ResponseEntity<ProductDto> updateCategoryOfProduct(@PathVariable String categoryId,
+			@PathVariable String productId)
+	{
+		
+		
+		
+		ProductDto productDto=productService.updateCategory(productId, categoryId);
+		return new ResponseEntity<ProductDto>(productDto,HttpStatus.OK);
+		
+		
+	}
+	
+	@GetMapping("/{categoryId}/products")
+	public ResponseEntity<PageableResponse<ProductDto>> getProductsOfCategory(@PathVariable String categoryId,
+			@RequestParam(value="pageNumber",defaultValue="0",required=false) int pageNumber,
+			@RequestParam(value="pageSize",defaultValue="10",required=false) int pageSize,
+			@RequestParam(value="sortBy",defaultValue="title",required=false) String sortBy,
+			@RequestParam(value="sortDir",defaultValue="asc",required=false) String sortDir)
+	{
+		
+		PageableResponse<ProductDto> response=productService.getAllOfCategories(categoryId,pageNumber,pageSize,sortBy,sortDir);
+		
+		return new ResponseEntity<>(response,HttpStatus.OK);
+		
+	}
+	
+
+
 	
 }
 

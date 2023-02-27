@@ -8,17 +8,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 
-public class PageableResponse<T>{
-	
-	
+public class PageableResponse<T>
+{
 	
 	private List<T> content;
 	private int pageNumber;
@@ -27,5 +24,4 @@ public class PageableResponse<T>{
 	private int totalPages;
 	private boolean lastPage;
 	
-
 }

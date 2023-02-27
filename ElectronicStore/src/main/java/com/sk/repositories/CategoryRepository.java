@@ -6,4 +6,13 @@ import com.sk.entities.Category;
 
 public interface CategoryRepository extends JpaRepository<Category, String>{
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
