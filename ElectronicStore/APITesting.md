@@ -23,3 +23,24 @@ http://localhost:9090/users
 
 http://localhost:9090/users?pageNumber=0&pageSize=3&sortBy=name&sortDir=desc
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Get Cart
+
+http://localhost:9090/carts/2a32a9e1-babb-47f5-8eee-1620737791d3
+
+
+
+
+
