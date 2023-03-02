@@ -6,7 +6,11 @@ package com.sk.entities;
  *
  */
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -29,7 +33,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="users")
-public class User {
+public class User implements UserDetails{
 	
 	
 
@@ -44,7 +48,7 @@ public class User {
 	@Column(name="user_email",unique=true)
 	private String email;
 	
-	@Column(name="user_password",length=10)
+	@Column(name="user_password",length=1000)
 	private String password;
 	private String gender;
 	
@@ -56,6 +60,51 @@ public class User {
 
 	@OneToMany(mappedBy = "user",fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
 	private List<Order> orders=new ArrayList<>();
+
+	
+	
+	//must have to implement
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return this.email;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return this.password;
+	}
 	
 	
 	
