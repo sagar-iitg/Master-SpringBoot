@@ -2,7 +2,6 @@ package com.sk.entities;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Cat implements Animal{
 
 	@Override

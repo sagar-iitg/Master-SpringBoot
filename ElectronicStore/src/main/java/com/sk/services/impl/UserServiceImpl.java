@@ -23,9 +23,11 @@ import org.springframework.stereotype.Service;
 
 import com.sk.dtos.PageableResponse;
 import com.sk.dtos.UserDto;
+import com.sk.entities.Role;
 import com.sk.entities.User;
 import com.sk.exception.ResourceNotFoundException;
 import com.sk.helper.Helper;
+import com.sk.repositories.RoleRepository;
 import com.sk.repositories.UserRepository;
 import com.sk.services.UserService;
 
@@ -54,6 +56,12 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
+	@Value("${normal.role.id}")
+	private String normalRoleId;
+	
+	@Autowired
+	private RoleRepository roleRepository;
+	
 	@Override
 	public UserDto createUser(UserDto userDto) {
  		
@@ -68,6 +76,17 @@ public class UserServiceImpl implements UserService{
 		//dto ->entity
 		
 		User user=dtoToEntity(userDto);
+		
+		
+		
+		//fetch of normal user and set role
+		
+		Role role = roleRepository.findById(normalRoleId).get();
+		user.getRoles().add(role);
+		
+		
+		
+		
 		User savedUser=userRepository.save(user);
 		
 		
