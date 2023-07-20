@@ -23,8 +23,8 @@ public class StudentController {
 		
 		
 		
-		String str=null;
-		System.out.println(str.length());
+//		String str=null;
+//		System.out.println(str.length());
 		
 		System.out.println(student);
 		return student;
