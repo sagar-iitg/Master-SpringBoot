@@ -1,5 +1,7 @@
 package com.sagar.springbootdemo.model;
 
+import org.springframework.http.HttpStatus;
+
 public class Employee {
 
 
@@ -50,8 +52,6 @@ public class Employee {
     public void setDepartment(String department) {
         this.department = department;
     }
-
-
 
 
 }

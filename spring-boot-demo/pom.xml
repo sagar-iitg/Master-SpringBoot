@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sagar</groupId>
 	<artifactId>spring-boot-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>spring-boot-demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -55,6 +55,8 @@
 	</dependencies>
 
 	<build>
+
+		<finalName>spring-boot-demo-app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

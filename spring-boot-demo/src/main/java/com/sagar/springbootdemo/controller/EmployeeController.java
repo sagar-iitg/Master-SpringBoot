@@ -39,6 +39,16 @@ public class EmployeeController {
     }
 
 
+    @DeleteMapping("{id}")
+    public Employee deleteEmployeeByID(@PathVariable String id){
+
+        return employeeService.deleteEmployeeByID(id);
+
+    }
+
+
+
+
 
 
 
