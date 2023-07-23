@@ -1,27 +1,19 @@
-package com.sagar.springbootdemo.model;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.http.HttpStatus;
+package com.sagar.springbootdemo.entity;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-//@JsonIgnoreProperties({"empId"})
+@Entity
+@Table(name="table_employee")
+public class EmployeeEntity {
 
-public class Employee {
-
-
-
-
+    @Id
     private String empId;
     private String firstName;
     private String lastName;
     private String emailId;
-
-
-
-
-   // @JsonIgnore
     private String department;
 
     public String getEmpId() {
@@ -63,6 +55,4 @@ public class Employee {
     public void setDepartment(String department) {
         this.department = department;
     }
-
-
 }

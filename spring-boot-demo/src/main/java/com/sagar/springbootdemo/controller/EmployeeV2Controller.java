@@ -7,18 +7,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
-@RequestMapping("/v1/employees")
-public class EmployeeController {
+@RequestMapping("/v2/employees")
+public class EmployeeV2Controller {
 
     @Autowired
-    @Qualifier("employeeServiceImpl")
+    @Qualifier("employeeV2ServiceImpl")
     private EmployeeService employeeService;
 
 
     @PostMapping
     public Employee save(@RequestBody Employee employee) {
+
+
         return employeeService.save(employee);
     }
 
@@ -44,6 +47,8 @@ public class EmployeeController {
         return employeeService.deleteEmployeeByID(id);
 
     }
+
+
 
 
 }
