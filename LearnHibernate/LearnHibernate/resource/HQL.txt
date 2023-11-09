@@ -1,0 +1,40 @@
+------
+
+get()
+load()
+
+
+How to load complex data?
+
+HQL-Hibernate Query Language
+
+SQL and HQL
+
+SQL is similar to HQL
+
+HQL
+Database independent
+Easy to learn java programmer
+focusing on ORM Tools
+
+
+SQL
+Database dependent
+Easy to learn for DBA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
