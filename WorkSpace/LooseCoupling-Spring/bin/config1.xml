@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define your beans here -->
+   
+   <bean id="data" class="com.sk.example.DataService"></bean>
+   <bean id="miss" class="com.sk.example.MissedCallAlertService"></bean>
+   <bean id="tune" class="com.sk.example.HelloTuneService"></bean>
+   
+   <bean id="air" class="com.sk.example.Airtel">
+   <property name="service" ref="data"></property>
+   
+   </bean>
+  
+    
+   
+</beans>
+
+
+
+
+

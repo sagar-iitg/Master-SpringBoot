@@ -1,0 +1,2 @@
+https://repo.spring.io/ui/packages
+

@@ -1,0 +1,188 @@
+Spring IOC-------
+Cretaing object for us
+managing object for us
+Helping our application to be configurable
+managing dependencies
+
+App should be configurable.
+Do not change source code.
+
+
+
+----Inversion Of Control
+OutSource an Object factory
+The approach of outsourcing the construction and management of objects.
+
+App Should be configurable
+
+Easily change the code
+
+
+Spring- Object factory
+
+
+-------
+Spring Conatiner
+
+. Primary Objectives
+ create and manage objects(Inversion of control)
+ Inject's Object dependencies (Dependency Injection)
+ 
+ 
+ Configuring Spring Container
+ 1. XML Configuration (legacy, but most legacy app used this)
+ 2. Java Annotation (modern)
+ 3. java Source code (modern)
+ 
+ 
+Spring Development Process
+1. Configure your spring beans
+2. create a spring container
+3. reterive beans from spring container
+
+
+Spring container is generically known as ApplicationContext
+
+.Specialized Implementation
+
+.ClassPathXmlApplicationContext
+.AnnotationConfigApplicationContext
+.GenericWebApplicationContext
+.others.. 
+
+
+What is Spring Bean?
+Simply java object
+
+When java Objects are created by the spring container
+then spring refers, to them as spring beans.
+
+
+spring beans are created from normal java classes ...just like java objects.
+
+
+
+Dependency Injection
+The Client delegates to calls to another object the responsibility 
+of providing its dependencies.
+
+
+"dependency" same thing as "helper objects"
+Well spring has an object factory.
+
+Injection Types
+
+Constructor Injection.
+Setter Injection.
+
+AutoWiring
+
+AutoWiring is not possible for primitive or String type
+
+
+@Autowired
+@Qualifier
+@Value
+@Required
+@Component
+@Configuration
+Similar as xml configuration file (beans.xml)
+@ComponentScan(basePackage="com.sk")
+
+Load Properties files in spring config files
+
+
+   <context:property-placeholder  location="classpath:sport.properties"/>
+   
+
+
+Bean Life cycle:
+
+Default Scope of bean is: Singleton
+
+What is Singleton?
+
+Spring container creates only one instance of bean, by default
+It is cached in memory
+All request for the bean- will return a shared reference to the same bean.
+
+Spring scopes:
+
+Singleton:
+Creates a single shared instance of the bean.-- default scopes
+
+prototype:
+creates a new bean instance for each container request.
+
+request:
+scoped to an http web request.only used for web apps.
+
+session:
+scoped to an HTTP web session. Only used for web-apps
+
+global-session
+scoped to global HTTP web sessions. only used for web apps.
+
+Bean-lifecycle
+
+
+Container Started -> Bean Instantiated -> 
+Dependencies Injected ->Internal Spring processing ->
+Our Custom init method -> custom Destroy method
+-> stop.
+
+
+
+attributes in xml configuration
+
+init-method
+destory-method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
