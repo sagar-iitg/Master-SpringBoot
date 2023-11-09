@@ -1,21 +1,34 @@
 package com.jpa.test;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BootJpaExampleApplication {
+public class BootJpaExampleApplication implements CommandLineRunner {
+
+	@Autowired
+	UserRepository userRepository;
 
 	public static void main(String[] args) {
 		 SpringApplication.run(BootJpaExampleApplication.class, args);
 		 
 		// UserRepository userRepo=context.getBean(UserRepository.class);
 				 
-		 User user=new User(1,"sk","giridih");
-		
+
+
+
+
 		 
 		
 		
 	}
 
+	@Override
+	public void run(String... args) throws Exception {
+		User user=new User("kumar","ranchi");
+		userRepository.save(user);
+
+	}
 }
