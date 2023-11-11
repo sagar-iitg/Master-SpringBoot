@@ -1,3 +1,4 @@
+
 # Master-SpringBoot
 Spring, Spring MVC, Spring Boot
 
@@ -11,6 +12,25 @@ It decrease the effort of the developer
 
 Spring framework+ Embedded HTTP Servers (Tomcat,Jetty) -XML <bean> Configuration or @Configuration = Spring Boot
 jar based application
+
+AutoConfiguration + Standlone Applications
+SpringBoot Application can deploy directly in server.
+No need to install tomcat in server and configure it.
+
+war - deploy on external web server
+springboot jar- run directly
+Externalize object creation - spring boot --- IOC conatiner manages creation of object -- Inversion of control
+
+IOC container 
+Application Context is way to achieve IOC Container
+
+@Component
+Class is automatically registered as a spring bean
+
+
+
+@SpringBootApplication ----  @Configuration+@EnableAutoConfiguration+@ComponenetScan
+
 
 
 
