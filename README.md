@@ -31,7 +31,11 @@ Class is automatically registered as a spring bean
 
 @SpringBootApplication ----  @Configuration+@EnableAutoConfiguration+@ComponenetScan
 
+Methods inside a controller class should be public so that they can be accessed and invoked by the spring framework or external http requests.
 
+Selecting raw and json in the body of a post request in postman indicates that the request body will contain data in JSON Format, allowing server
+to parse and process the incoming data accurately. This ensures that the data is transmitted and received in structured manner, following,
+the json format conventions.
 
 
 ## Developing web apps using java technology
