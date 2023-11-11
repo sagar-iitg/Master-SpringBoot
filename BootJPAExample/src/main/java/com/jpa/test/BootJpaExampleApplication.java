@@ -27,7 +27,7 @@ public class BootJpaExampleApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		User user=new User("kumar","ranchi");
+		User user=new User("rahul","patna");
 		userRepository.save(user);
 
 	}
