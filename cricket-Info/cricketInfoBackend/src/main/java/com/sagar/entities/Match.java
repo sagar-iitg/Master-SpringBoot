@@ -27,14 +27,10 @@ public class Match {
     private String battingTeam;
 
     private String battingTeamScore;
-
     private String bowlTeam;
     private String bowlTeamScore;
-
     private String liveText;
-
     private String matchLink;
-
     private String textComplete;
 
     @Enumerated

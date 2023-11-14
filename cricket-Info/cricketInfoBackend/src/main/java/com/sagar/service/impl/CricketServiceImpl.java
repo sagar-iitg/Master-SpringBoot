@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class CricketServiceImpl implements CricketService {
@@ -93,10 +94,13 @@ public class CricketServiceImpl implements CricketService {
             Document document = Jsoup.connect(tableURL).get();
             Elements table = document.select("table.cb-srs-pnts");
             Elements tableHeads = table.select("thead>tr>*");
-            List<String> headers = new ArrayList<>();
-            tableHeads.forEach(element -> {
-                headers.add(element.text());
-            });
+          //  List<String> headers = new ArrayList<>();
+//            tableHeads.forEach(element -> {
+//                headers.add(element.text());
+//            });
+            List<String> headers = tableHeads.stream()
+                    .map(Element::text)
+                    .collect(Collectors.toList());
             pointTable.add(headers);
             Elements bodyTrs = table.select("tbody>*");
             bodyTrs.forEach(tr -> {
@@ -110,14 +114,14 @@ public class CricketServiceImpl implements CricketService {
                             points.add(td.text());
                         }
                     });
-//                    System.out.println(points);
+                   // System.out.println(points);
                     pointTable.add(points);
                 }
 
 
             });
 
-            System.out.println(pointTable);
+           //System.out.println(pointTable);
         } catch (Exception e) {
             e.printStackTrace();
         }
