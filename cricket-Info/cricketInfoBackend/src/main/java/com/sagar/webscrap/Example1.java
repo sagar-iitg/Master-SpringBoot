@@ -23,6 +23,8 @@ public class Example1 {
                 .map(element -> element.text())
                 .collect(Collectors.toList());
 
+        System.out.println(headers);
+
 
     }
 }
