@@ -40,6 +40,7 @@ public class User implements UserDetails {
     @Column(name = "user_image_name")
     private String imageName;
 
+    //one user has many orders
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Order> orders = new ArrayList<>();
 
