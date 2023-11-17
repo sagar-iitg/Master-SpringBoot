@@ -34,22 +34,22 @@ import java.util.List;
 
         info = @Info(
                 title = "Electronic Store API ",
-                description = "This is backed of electronic store developed in premium course",
+                description = "Backed Application",
                 version = "1.0V",
                 contact = @Contact(
-                        name = "Durgesh Kumar Tiwari",
-                        email = "learncodewithdurgesh@gmail.com",
-                        url = "https://learncodewithdurgesh.com"
+                        name = "Sagar Kumar",
+                        email = "",
+                        url = "https://sagar-iitg.github.io/"
                 ),
                 license = @License(
                         name = "OPEN License",
-                        url = "https://learncodewithdurgesh.com"
+                        url = "https://sagar-iitg.github.io/"
                 )
         )
         ,
         externalDocs = @ExternalDocumentation(
                 description = "This is external docs",
-                url = "https://learncodewithdurgesh.com"
+                url = "https://sagar-iitg.github.io/"
         )
 )
 public class SwaggerConfig {
