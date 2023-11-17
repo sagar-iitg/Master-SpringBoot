@@ -58,9 +58,9 @@ public class ElectronicStoreApplication implements CommandLineRunner {
                     .build();
 
             User normalUser = User.builder()
-                    .name("durgesh")
-                    .email("durgesh@gmail.com")
-                    .password(passwordEncoder.encode("durgesh123"))
+                    .name("sagar")
+                    .email("sagar@gmail.com")
+                    .password(passwordEncoder.encode("sagar123"))
                     .gender("Male")
                     .imageName("default.png")
                     .roles(Set.of(role_normal))
