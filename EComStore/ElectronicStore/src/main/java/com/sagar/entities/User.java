@@ -44,6 +44,12 @@ public class User implements UserDetails {
     CascadeType.REMOVE which is a way to delete a
     child entity or entities when the deletion of its parent happens.
 
+     When CascadeType.REMOVE is used,
+     any child entities associated with a parent entity
+     will be automatically deleted when the parent entity
+     is deleted. However,
+      updates or modifications made
+       to the parent entity will not be cascaded to the child entities.
      */
 
     //one user has many orders
@@ -53,7 +59,7 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Role> roles = new HashSet<>();
 
-
+    //one user has one cart
     @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
     private  Cart cart;
 
