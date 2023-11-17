@@ -31,6 +31,7 @@ public class Category {
     private String coverImage;
     // other attributes if you have...
 
+    //one category has many products
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products = new ArrayList<>();
 
