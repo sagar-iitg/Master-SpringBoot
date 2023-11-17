@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SecurityRequirement(name="scheme1")
-@RequestMapping("/test")
+@RequestMapping("/")
 public class HomeController {
     @GetMapping
-    public String testing() {
+    public String home() {
         return "Welcome to electronic store";
     }
 }
