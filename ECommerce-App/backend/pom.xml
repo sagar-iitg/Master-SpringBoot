@@ -11,7 +11,7 @@
 
 
     <groupId>com.sagar</groupId>
-    <artifactId>ElectronicStore</artifactId>
+    <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ElectronicStore</name>
     <description>Backend project for electronic store</description>
