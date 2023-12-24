@@ -32,6 +32,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<JwtResponse> login(@RequestBody JwtRequest request) {
+        logger.info(request.getEmail());
+        logger.info(request.getPassword());
 
         this.doAuthenticate(request.getEmail(), request.getPassword());
 
