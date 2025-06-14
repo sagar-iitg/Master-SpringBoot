@@ -15,14 +15,6 @@ public class BootJpaExampleApplication implements CommandLineRunner {
 		 SpringApplication.run(BootJpaExampleApplication.class, args);
 		 
 		// UserRepository userRepo=context.getBean(UserRepository.class);
-				 
-
-
-
-
-		 
-		
-		
 	}
 
 	@Override
