@@ -2,7 +2,6 @@ package com.sk.introductionTospringboot.conroller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -61,6 +60,7 @@ public class UserController {
         HttpHeaders headers=new HttpHeaders();
         headers.set("X-sagar","kumar");
         headers.set("X-mohit","kumar");
+        headers.set("X-sai","kumar");
         String str="hello world";
         return ResponseEntity.status(HttpStatus.OK).headers(headers).body(str);
 
