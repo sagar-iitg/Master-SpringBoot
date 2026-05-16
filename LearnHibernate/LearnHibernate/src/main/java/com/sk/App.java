@@ -19,13 +19,11 @@ public class App
     public static void main( String[] args ) throws IOException
     {
         System.out.println( "Project Statrted" );
-        
         //SessionFactory factory=new Configuration().configure().buildSessionFactory();
         Configuration cfg=new Configuration();
         cfg.configure("hibernate.cfg.xml");
         SessionFactory f=cfg.buildSessionFactory();
-        
-        
+
         //create Student
         Student st=new Student(1,"sagar kumar","Giridih");
         Student st1=new Student();

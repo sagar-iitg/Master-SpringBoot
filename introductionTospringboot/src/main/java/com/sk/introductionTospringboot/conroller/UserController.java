@@ -20,6 +20,11 @@ public class UserController {
 
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(UserController.class);
 
+
+    @GetMapping("test")
+    public ResponseEntity<String> test() {
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body("hello world");
+    }
     @GetMapping("get-user")
     public ResponseEntity<String> getUser() throws JsonProcessingException {
         log.info("inside get-user method");
