@@ -10,9 +10,7 @@ public class DeadlockService {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public DeadlockService(
-            JdbcTemplate jdbcTemplate
-    ) {
+    public DeadlockService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -23,9 +21,7 @@ public class DeadlockService {
     @PostConstruct
     public void setupDatabase() {
 
-        System.out.println(
-                "\nCreating table..."
-        );
+        System.out.println("\nCreating table...");
 
         jdbcTemplate.execute("""
                 DROP TABLE IF EXISTS accounts
@@ -48,9 +44,7 @@ public class DeadlockService {
                 VALUES (2, 2000)
                 """);
 
-        System.out.println(
-                "Inserted sample rows"
-        );
+        System.out.println("Inserted sample rows");
     }
 
     // =====================================================
@@ -62,9 +56,7 @@ public class DeadlockService {
 
         try {
 
-            System.out.println(
-                    "\n[A] Locking Row 1"
-            );
+            System.out.println("\n[A] Locking Row 1");
 
             jdbcTemplate.update("""
                     UPDATE accounts
@@ -74,9 +66,7 @@ public class DeadlockService {
 
             Thread.sleep(2000);
 
-            System.out.println(
-                    "[A] Trying Row 2"
-            );
+            System.out.println("[A] Trying Row 2");
 
             jdbcTemplate.update("""
                     UPDATE accounts
@@ -84,9 +74,7 @@ public class DeadlockService {
                     WHERE id = 2
                     """);
 
-            System.out.println(
-                    "[A] COMMIT"
-            );
+            System.out.println("[A] COMMIT");
 
         } catch (Exception e) {
 
@@ -103,9 +91,7 @@ public class DeadlockService {
 
         try {
 
-            System.out.println(
-                    "\n[B] Locking Row 2"
-            );
+            System.out.println("\n[B] Locking Row 2");
 
             jdbcTemplate.update("""
                     UPDATE accounts
@@ -115,9 +101,7 @@ public class DeadlockService {
 
             Thread.sleep(2000);
 
-            System.out.println(
-                    "[B] Trying Row 1"
-            );
+            System.out.println("[B] Trying Row 1");
 
             jdbcTemplate.update("""
                     UPDATE accounts
@@ -125,9 +109,7 @@ public class DeadlockService {
                     WHERE id = 1
                     """);
 
-            System.out.println(
-                    "[B] COMMIT"
-            );
+            System.out.println("[B] COMMIT");
 
         } catch (Exception e) {
 
